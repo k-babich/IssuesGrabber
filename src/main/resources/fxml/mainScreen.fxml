@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="983.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apptimized.tools.randomizer.Randomizer.UIInterface.Controllers.MainController">
+   <children>
+      <TabPane fx:id="tabPane" layoutY="-1.0" prefHeight="634.0" prefWidth="983.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab id="#randomizerTab" text="Search for issues">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="990.0">
+                     <children>
+                        <TableView fx:id="issuesTable" layoutX="7.0" layoutY="50.0" maxHeight="1.7976931348623157E308" prefHeight="537.0" prefWidth="726.0">
+                          <columns>
+                            <TableColumn fx:id="keyColumn" editable="false" maxWidth="105.0" prefWidth="105.0" text="issue key" />
+                            <TableColumn fx:id="summaryColumn" editable="false" maxWidth="320.0" prefWidth="307.0" text="summary" />
+                              <TableColumn fx:id="assigneeColumn" editable="false" maxWidth="115.0" minWidth="0.0" prefWidth="100.0" text="assignee" />
+                              <TableColumn fx:id="packagerColumn" maxWidth="115.0" prefWidth="100.0" text="packager" />
+                              <TableColumn fx:id="qaColumn" maxWidth="115.0" prefWidth="100.0" text="qa engineer" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </TableView>
+                        <Button fx:id="loadQueryResultButton" layoutX="749.0" layoutY="4.0" mnemonicParsing="false" onAction="#getQueryResultsInTable" prefHeight="38.0" prefWidth="209.0" text="Execute query" />
+                        <TextField fx:id="jqlTextInput" layoutX="72.0" layoutY="3.0" prefHeight="41.0" prefWidth="661.0" promptText="enter your Jira Query here and click &quot;Execute query&quot; button" />
+                        <Label fx:id="jqlLabel" layoutX="14.0" layoutY="9.0" text="Query">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Label>
+                        <Button fx:id="exportToXlsx" layoutX="779.0" layoutY="237.0" mnemonicParsing="false" onAction="#writeResultsToExcel" prefHeight="105.0" prefWidth="150.0" text="Export results to *.xlsx" textAlignment="CENTER" wrapText="true" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>
